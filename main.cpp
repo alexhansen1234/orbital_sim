@@ -9,16 +9,44 @@ Quaternion<double> k(0,0,0,1);
 int main(int argc, char ** argv)
 {
   double dtheta = 15;
-  Quaternion<double> point(0, 1.0, 0.0, 0.0);
-  Quaternion<double> q1(dtheta, Vector3<double>(1,1,1));
+  Quaternion<double> point(0, 8000.0, 0.0, 0.0);
+  Quaternion<double> q1(dtheta, Vector3<double>(0, 1, 0));
 
+  int i = 0;
   std::cout << point << "\n";
 
-  for(int i = 0; i < 360/15; ++i)
+  for(i = 1; i <= 360/dtheta; ++i)
   {
     point = (q1 * point) * !q1;
-    std::cout << ((q1 * point) * !q1) << "\n";
+    std::cout << (q1 * point) * !q1 << "\n";
   }
+
+  point = Quaternion<double>(0, 8000.0, 0.0, 0.0);
+  q1 = Quaternion<double>(dtheta, Vector3<double>(0, 0, 1));
+
+  i = 0;
+  std::cout << point << "\n";
+
+  for(i = 1; i <= 360/dtheta; ++i)
+  {
+    point = (q1 * point) * !q1;
+    std::cout << point << "\n";
+  }
+
+  point = Quaternion<double>(0, 0.0, 8000.0, 0.0);
+  q1 = Quaternion<double>(dtheta, Vector3<double>(1, 0, 0));
+
+  i = 0;
+  std::cout << point << "\n";
+
+  for(i = 1; i <= 360/dtheta; ++i)
+  {
+    point = (q1 * point) * !q1;
+    std::cout << point << "\n";
+  }
+
+
+
   return 0;
 }
 

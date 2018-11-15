@@ -170,12 +170,11 @@ Quaternion<T>::Quaternion(const T & thetad, const Vector3<T> & axis)
 template<class T>
 Quaternion<T> Quaternion<T>::operator = (const Quaternion<T> &q)
 {
-  this->w = q.w;
-  this->x = q.x;
-  this->y = q.y;
-  this->z = q.z;
+  w = q.w;
+  x = q.x;
+  y = q.y;
+  z = q.z;
   return * this;
-  //return Quaternion<T>(q.w, q.x, q.y, q.z);
 }
 
 template<class T>
@@ -334,7 +333,7 @@ Quaternion<T> Quaternion<T>::operator /= (const double& rhs)
 template<typename T>
 std::ostream& operator<<(std::ostream &out, const Quaternion<T>& c)
 {
-     out << "(" << c.w << "," << c.x << "," << c.y << "," << c.z << ")";
+     out << "( " << c.w << " , " << c.x << " , " << c.y << " , " << c.z << " )";
      return out;
 }
 
