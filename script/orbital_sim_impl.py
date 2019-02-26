@@ -32,10 +32,10 @@ if __name__ == '__main__':
     simulation_time = 60 * 60 * 24 * 2
 
     # Number of satellites per orbital plane
-    sat_per_orbit = 20
+    sat_per_orbit = 40
 
     # Number of orbital planes per simulation
-    orbit_per_sim = 2
+    orbit_per_sim = 3
 
     # Set radius of satellites from center of earth
     orbit_radius = 8000000
